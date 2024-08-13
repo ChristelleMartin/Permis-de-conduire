@@ -8,7 +8,7 @@
 
 ## Instructions
 
-Une auto-école veut mettre à disposition un formulaire de pré-inscription, pour que les candidats puissent vérifier la recevabilité de leur candidature. Aucune information n'est stockée, on peut l'exécuter côté **frontend**, avec **Javascript**.
+Une auto-école veut mettre à disposition un formulaire de pré-inscription, pour que les candidats puissent vérifier la recevabilité de leur inscription. Aucune information n'est stockée, on peut donc l'exécuter côté **frontend**, avec **Javascript**.
 
 Le candidat entre des informations personnelles dans la partie de gauche, les soumet et la partie de droite s'actualise pour lui dire si son inscription est possible.
 
