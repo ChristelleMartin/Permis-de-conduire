@@ -50,33 +50,27 @@ const app = {
         return;
     }
         
-        // On définit les textes à afficher dans le 1er champ de la partie réponse : prénom et nom du candidat. 
-        // On concatène les 2 variables dont on a besoin.
+        // On définit les textes à afficher dans le 1er champ de la partie réponse : prénom et nom du candidat avec une concaténation des variables. 
         const nameToDisplay = firstname + ' ' + lastname;
         
-        // On affiche une message différent selon l'âge du candidat. 
-        // On a besoin de créer une fonction qui déterminera le message retourné.
+        // On affiche un message différent selon l'âge du candidat avec la méthode canSubscribe dans le champ du dessous.
 
-        // Les chiffres saisis dans un formulaire sont toujours enregistrés en string, il faut les convertir en nombre grâce à la fonction native Number de JS.
-        age = Number(age);
-
-        // On utilise la méthode canSubscribe qui nous renvoie le message en fonction de l'âge.
-        const message = app.canSubscribe(age);
+        const message = app.canSubscribe(Number(age));
 
 
-        //On va ensuite modifier le DOM pour fournir la réponse au candidat.
+        //On modifie le DOM pour actualiser la partie de droite :
 
-        // On commence par sélectionner les éléments de la page qui viennent recevoir le résultat et remplacer le -
+        // On sélectionne les éléments de la page qui vont recevoir la modification :
         let nameContainer = document.querySelector('.name-answer');
         let messageContainer = document.querySelector('.authorization-answer');
 
-        // Puis on modifie leur contenu avec innerText.
+        // Puis on modifie leur contenu avec innerText :
         nameContainer.innerText = nameToDisplay;
         messageContainer.innerText = message;
     },
 
     showError: function(fieldId, message) {
-        // On crée un élément <div> pour afficher le message d'erreur
+        // On crée un élément <div> pour afficher un message en cas d'erreur
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
         errorDiv.innerText = message;
@@ -87,7 +81,7 @@ const app = {
     },
     
     clearErrors: function() {
-        // Supprime tous les éléments avec la classe "error-message"
+        // On supprime tous les éléments avec la classe "error-message"
         const errors = document.querySelectorAll('.error-message');
         errors.forEach(function(error) {
             error.remove();
